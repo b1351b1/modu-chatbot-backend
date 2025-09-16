@@ -1,0 +1,147 @@
+# 🚀 ChatGPT 기반 영단어 분석기
+
+---
+
+## 📋 프로젝트 설명
+K-영어시험을 준비하는데 있어 단어가 매우 중요한데 ChatGPT API를 활용해서 2단계에 걸쳐 단어를 분석해주는 웹 애플리케이션입니다. 
+
+---
+
+## 🌟 **주요 기능**
+
+#### **1차 기본 분석**
+- **발음 정보**: IPA 발음기호 + 한국어 발음 + 강세 표시
+- **대표 의미**: 핵심 의미 2-3가지 제공
+- **예문 & 번역**: 3개 예문 + 한국어 번역 + 맥락별 의미
+
+#### **2차 심화 분석**
+- **주요 숙어**: 실용적인 숙어 1-2개
+- **상세 의미**: 어원 및 의미 확장 과정
+- **유의어**: 3개 유의어
+
+#### **채팅 기록 저장**
+- **대화내용 확인 가능
+- **PDF로 내보내기 기능  
+
+---
+
+## 🎨 **와이어프레임 & 화면 설계**
+
+### **1. 로그인/회원가입 화면**
+![로그인 화면](images/wireframe_login.png)
+- 2단 구성 (회원가입 | 로그인)
+- 실시간 입력 검증
+
+### **2. 기본 분석 화면**
+![기본 분석 화면](images/wireframe_chat.png)  
+- 단어 입력 → 즉시 분석 결과 표시
+- 발음, 의미, 예문을 체계적으로 구성
+- [심화 분석] 버튼으로 확장 가능
+
+### **3. 심화 분석 화면**
+![심화 분석 화면](images/wireframe_advanced.png)
+- 숙어, 상세 의미, 유의어 정보
+- 기본 분석 연계 기능
+- [이전 단계] 버튼으로 복귀
+
+### **4. 히스토리 화면**
+![히스토리 화면](images/wireframe_history.png)
+- 사용자별 분석 기록 관리
+- [PDF 내보내기] 기능
+- 시간순 정렬 표시
+
+---
+
+### 💻 **기술 스택**
+```
+🔧 Backend:  FastAPI, Python, uvicorn
+🎨 Frontend: HTML5, CSS3, JavaScript
+🤖 AI:       ChatGPT API (부트캠프 서버)
+💾 Storage:  메모리 기반 세션 관리
+📱 Design:   반응형 웹 디자인
+```
+
+
+## 📁 **프로젝트 구조**
+
+```
+📦 영단어분석기/
+├── 🐍 main.py                    # FastAPI 메인 서버
+├── 📂 templates/                 # HTML 템플릿
+│   ├── 🔐 index.html            # 로그인/회원가입
+│   ├── 📝 chat.html             # 기본 분석 화면
+│   ├── 🔍 advanced_chat.html    # 심화 분석 화면
+│   └── 📚 history.html          # 히스토리 화면
+├── 📂 static/                    # 정적 파일
+│   ├── 🎨 style.css             # 통합 스타일시트
+│   ├── 🔑 auth.js               # 인증 로직
+│   ├── 💬 chat.js               # 기본 분석 로직
+│   ├── 🔬 advanced.js           # 심화 분석 로직
+│   └── 📖 history.js            # 히스토리 로직
+├── 📂 images/                    # 📸 와이어프레임 이미지
+│   ├── wireframe_login.jpg      # 로그인 화면 와이어프레임
+│   ├── wireframe_chat.jpg       # 기본분석 화면 와이어프레임
+│   ├── wireframe_advanced.jpg   # 심화분석 화면 와이어프레임
+│   └── wireframe_history.jpg    # 히스토리 화면 와이어프레임
+├── 📋 README.md                  # 📚 프로젝트 문서
+└── 📋 chatbot_wbs.md            # 프로젝트 WBS 문서
+```
+
+---
+
+## 🛠️ **실행 방법**
+
+### 1️⃣ **환경 설정**
+```bash
+# Python 가상환경 생성
+python -m venv venv
+venv\Scripts\activate # Mac: source venv/bin/activate  
+
+# 의존성 설치
+pip install fastapi uvicorn httpx
+```
+
+### 2️⃣ **서버 실행**
+```bash
+python main.py
+```
+
+### 3️⃣ **접속**
+```
+🌐 메인 화면:     http://localhost:8000
+📚 API 문서:      http://localhost:8000/docs
+❤️ 서버 상태:     http://localhost:8000/health
+```
+
+---
+
+## 🎯 **핵심 API 엔드포인트**
+
+| Method | Endpoint | 설명 |
+|--------|----------|------|
+| `GET` | `/` | 로그인/회원가입 화면 |
+| `POST` | `/api/register` | 회원가입 처리 |
+| `POST` | `/api/login` | 로그인 처리 |
+| `POST` | `/api/analyze-basic` | **기본 영단어 분석** |
+| `POST` | `/api/analyze-advanced` | **심화 영단어 분석** |
+| `GET` | `/api/chat-history` | 사용자 히스토리 조회 |
+| `GET` | `/health` | 서버 상태 확인 |
+
+---
+
+## 🔮 **향후 발전 방향**
+
+### 💾 **데이터베이스 연동**
+- PostgreSQL/MySQL 연동
+
+### 🎯 **기능 확장**
+- 단어 검색 결과 정교화
+- 학습 진도 추적
+- 단어 퀴즈 기능
+
+### 🌐 **배포 & 확장**
+- Docker 컨테이너화
+- AWS/GCP 클라우드 배포
+- 다중 사용자 동시 접속 지원
+
+---

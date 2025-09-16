@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영단어 분석기 - 기본분석</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 상단 네비게이션 -->
+        <header class="header">
+            <div class="nav-container">
+                <h1 class="logo">영단어 분석기</h1>
+                <div class="nav-items">
+                    <span class="username" id="username">000님</span>
+                    <button class="nav-btn" id="historyBtn">히스토리</button>
+                    <button class="nav-btn logout-btn" id="logoutBtn">로그아웃</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- 메인 콘텐츠 -->
+        <main class="main-content">
+            <!-- 단어 입력 섹션 -->
+            <div class="input-section">
+                <input 
+                    type="text" 
+                    id="wordInput" 
+                    class="word-input" 
+                    placeholder="분석할 영단어를 입력하세요 (예:run)"
+                    maxlength="50"
+                >
+                <button class="analyze-btn" id="analyzeBtn">[분석하기]</button>
+            </div>
+
+            <!-- 분석 결과 섹션 -->
+            <div class="analysis-section">
+                <h2>기본 분석</h2>
+                <div class="analysis-result" id="analysisResult">
+                    1. 발음 & 강세  2. 대표의미 (2-3가지)  3. 예문
+                </div>
+            </div>
+
+            <!-- 추가 분석 옵션 -->
+            <div class="additional-options">
+                <div class="option-buttons">
+                    <button class="option-btn">주요 숙어, 상세 의미, 유의어</button>
+                    <button class="advanced-btn" id="advancedBtn">[심화 분석]</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- 로딩 오버레이 -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-spinner"></div>
+            <p>분석 중입니다...</p>
+        </div>
+    </div>
+
+    <script src="/static/chat.js"></script>
+</body>
+</html>

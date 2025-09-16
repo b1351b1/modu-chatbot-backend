@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영단어 분석기 - 히스토리</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- 한글 폰트 추가 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- 상단 네비게이션 -->
+        <header class="header">
+            <div class="nav-container">
+                <h1 class="logo">영단어 분석기</h1>
+                <div class="nav-items">
+                    <span class="username" id="username">000님</span>
+                    <button class="nav-btn" id="chatBtn">기본분석</button>
+                    <button class="nav-btn logout-btn" id="logoutBtn">로그아웃</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- 메인 콘텐츠 -->
+        <main class="main-content">
+            <!-- 히스토리 섹션 -->
+            <div class="history-section">
+                <div class="section-header">
+                    <h2>히스토리</h2>
+                    <button class="export-btn" id="exportPdfBtn">[PDF 내보내기]</button>
+                </div>
+                
+                <!-- 히스토리 내용 -->
+                <div class="history-content" id="historyContent">
+                    <div class="no-history">
+                        아직 분석한 단어가 없습니다.
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 로딩 오버레이 -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-spinner"></div>
+            <p>히스토리를 불러오는 중입니다...</p>
+        </div>
+    </div>
+
+    <script src="/static/history.js"></script>
+</body>
+</html>

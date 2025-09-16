@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영단어 분석기 - 심화분석</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 상단 네비게이션 -->
+        <header class="header">
+            <div class="nav-container">
+                <h1 class="logo">영단어 분석기</h1>
+                <div class="nav-items">
+                    <span class="username" id="username">000님</span>
+                    <button class="nav-btn" id="historyBtn">히스토리</button>
+                    <button class="nav-btn logout-btn" id="logoutBtn">로그아웃</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- 메인 콘텐츠 -->
+        <main class="main-content">
+            <!-- 심화 분석 섹션 -->
+            <div class="advanced-section">
+                <div class="section-header">
+                    <h2>심화 분석</h2>
+                    <button class="back-btn" id="backBtn">[이전 단계]</button>
+                </div>
+                
+                <!-- 현재 분석 중인 단어 표시 -->
+                <div class="current-word" id="currentWordDisplay">
+                    <span>분석 단어: </span>
+                    <strong id="wordTitle">-</strong>
+                </div>
+                
+                <!-- 심화 분석 결과 -->
+                <div class="advanced-result" id="advancedResult">
+                    심화 분석 결과가 여기에 표시됩니다.
+                </div>
+            </div>
+        </main>
+
+        <!-- 로딩 오버레이 -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-spinner"></div>
+            <p>심화 분석 중입니다...</p>
+        </div>
+    </div>
+
+    <script src="/static/advanced.js"></script>
+</body>
+</html>
