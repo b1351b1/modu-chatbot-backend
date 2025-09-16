@@ -29,26 +29,15 @@ ChatGPT API를 활용해 영어 단어를 기본과 심화의 두 단계로 분�
 
 ### **1. 로그인/회원가입 화면**
 ![로그인 화면](images/wireframe_login.jpg)
-- 2단 구성 (회원가입 | 로그인)
-- 실시간 입력 검증
 
 ### **2. 기본 분석 화면**
 ![기본 분석 화면](images/wireframe_chat.jpg)  
-- 단어 입력 → 즉시 분석 결과 표시
-- 발음, 의미, 예문을 체계적으로 구성
-- [심화 분석] 버튼으로 확장 가능
 
 ### **3. 심화 분석 화면**
 ![심화 분석 화면](images/wireframe_advanced.jpg)
-- 숙어, 상세 의미, 유의어 정보
-- 기본 분석 연계 기능
-- [이전 단계] 버튼으로 복귀
 
 ### **4. 히스토리 화면**
 ![히스토리 화면](images/wireframe_history.jpg)
-- 사용자별 분석 기록 관리
-- [PDF 내보내기] 기능
-- 시간순 정렬 표시
 
 ---
 
@@ -103,14 +92,13 @@ pip install fastapi uvicorn httpx
 
 ### 2️⃣ **서버 실행**
 ```bash
-python main.py
+uvicorn main:app --reload
 ```
 
 ### 3️⃣ **접속**
 ```
 🌐 메인 화면:     http://localhost:8000
 📚 API 문서:      http://localhost:8000/docs
-❤️ 서버 상태:     http://localhost:8000/health
 ```
 
 ---
@@ -125,21 +113,12 @@ python main.py
 | `POST` | `/api/analyze-basic` | **기본 영단어 분석** |
 | `POST` | `/api/analyze-advanced` | **심화 영단어 분석** |
 | `GET` | `/api/chat-history` | 사용자 히스토리 조회 |
-| `GET` | `/health` | 서버 상태 확인 |
 
 ---
 
 ## 🔮 **향후 발전 방향**
 
-### 💾 **데이터베이스 연동**
-- PostgreSQL/MySQL 연동
-
 ### 🎯 **기능 확장**
 - 단어 검색 결과 정교화
-- 단어 퀴즈 
-
-### 🌐 **배포 & 확장**
-- Docker 컨테이너화
-- AWS/GCP 클라우드 배포
 
 ---
