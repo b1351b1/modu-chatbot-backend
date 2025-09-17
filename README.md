@@ -78,6 +78,33 @@ ChatGPT API를 활용해 영어 단어를 기본과 심화의 두 단계로 분�
 
 ---
 
+## 🎯 **핵심 구현 사항**
+
+### **API 엔드포인트**
+
+| Method | Endpoint | 설명 |
+|--------|----------|------|
+| `GET` | `/` | 로그인/회원가입 화면 |
+| `POST` | `/api/register` | 회원가입 처리 |
+| `POST` | `/api/login` | 로그인 처리 |
+| `POST` | `/api/analyze-basic` | 기본 영단어 분석 |
+| `POST` | `/api/analyze-advanced` | 심화 영단어 분석 |
+| `GET` | `/api/chat-history` | 사용자 히스토리 조회 |
+
+## **검증 관련**
+- 기존 id 중복 체크
+- id 3자 이상
+- 비밀번호 4자 이상
+- 이메일 @ 체크
+
+- 단어 입력창에 영어 단어만
+- 영어 단어 입력 없이 분석 불가
+
+- 중복 검색 단어는 최근 검색 단어만 히스토리에
+---
+
+
+
 ## 🛠️ **실행 방법**
 
 ### 1️⃣ **환경 설정**
@@ -103,16 +130,4 @@ uvicorn main:app --reload
 
 ---
 
-## 🎯 **핵심 API 엔드포인트**
-
-| Method | Endpoint | 설명 |
-|--------|----------|------|
-| `GET` | `/` | 로그인/회원가입 화면 |
-| `POST` | `/api/register` | 회원가입 처리 |
-| `POST` | `/api/login` | 로그인 처리 |
-| `POST` | `/api/analyze-basic` | **기본 영단어 분석** |
-| `POST` | `/api/analyze-advanced` | **심화 영단어 분석** |
-| `GET` | `/api/chat-history` | 사용자 히스토리 조회 |
-
----
 
