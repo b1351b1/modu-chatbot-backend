@@ -68,10 +68,10 @@ ChatGPT API를 활용해 영어 단어를 기본과 심화의 두 단계로 분�
 │   ├── 🔬 advanced.js           # 심화 분석 로직
 │   └── 📖 history.js            # 히스토리 로직
 ├── 📂 images/                    # 📸 와이어프레임 이미지
-│   ├── wireframe_login.jpg      # 로그인 화면 와이어프레임
-│   ├── wireframe_chat.jpg       # 기본분석 화면 와이어프레임
-│   ├── wireframe_advanced.jpg   # 심화분석 화면 와이어프레임
-│   └── wireframe_history.jpg    # 히스토리 화면 와이어프레임
+│   ├── wireframe_login.jpg      
+│   ├── wireframe_chat.jpg       
+│   ├── wireframe_advanced.jpg   
+│   └── wireframe_history.jpg    
 ├── 📋 README.md                  # 📚 프로젝트 문서
 └── 📋 chatbot_wbs.md            # 프로젝트 WBS 문서
 ```
